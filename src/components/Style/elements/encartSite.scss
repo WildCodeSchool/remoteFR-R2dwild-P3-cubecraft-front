@@ -1,0 +1,48 @@
+.encart_site {
+    @include encart_intro;
+    width: 95%;
+    @include sm {
+      width: 75%;
+    }
+    max-width:$max-width-block;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding:$padXXL;
+    margin: 5vh auto;
+        &::before {
+          content: "";
+          background-color: #061722b8;
+          display: flex;
+          width: 95%;
+          position: absolute;
+          z-index: 1;
+          border-radius: 35px;
+          height: 500px;
+          max-width:$max-width-block;
+          margin: -$padXXL;
+          @include sm {
+            width: 75%;
+          }
+        }
+    h3,p {
+      z-index: 2;
+      margin-top:$spaceH_XXL;
+      width: 50%;
+      @include sm {
+        width: 100%;
+      }
+    }
+
+    p {
+      color: $colorThird;
+    }
+    a {
+      z-index: 1;
+    }
+    .tinyelement{
+      z-index :2;
+    }
+  }
+
+
+

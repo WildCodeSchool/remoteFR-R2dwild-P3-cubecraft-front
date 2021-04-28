@@ -1,0 +1,101 @@
+.AddPage{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    input{
+        padding: 4px 6px;
+    }
+    .choice-picture{
+        box-shadow: none;
+        
+    }
+    .choice-picture:hover{
+        animation:none;
+    }
+    .container-choice-img{
+        display:flex;
+        align-self:center;
+        justify-content: space-between;
+        flex-wrap:wrap;
+    }
+    .choicephoto-container{
+        position: relative;
+        width:250px;
+        margin: 10px 0;
+        img{
+            width: 250px;
+            object-fit:cover;
+        }
+    }
+    .choicephoto-container button{
+        box-shadow: none;
+        position: absolute;
+        bottom: 2px;
+        right:2px;
+        z-index:10;
+        &:hover{
+            animation:none;
+        }
+    }
+    button{
+        padding: 10px 8px;
+        box-shadow: -10px 10px 1px $colorPrimary;
+        transition : all 1s ease;
+    }
+    button:hover{
+        animation : btn 1s ease forwards;
+        box-shadow: none;
+    }
+    @keyframes btn{
+        from{
+            transform: translate(0);
+            
+        }to{
+             transform: translate(-10px, 10px );
+             box-shadow: 0px black;
+        }
+    }
+    .Container-Addpage{
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+       h2{
+           justify-self: flex-start;
+        text-decoration: underline;
+        }
+        .form-group-add{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+            label{
+                margin:2vh 0 1vh 0;
+                font-size: $typoL;
+            }
+        }
+        .Form-group-btn{
+        display: flex;
+        margin: 2vh 0;
+        margin-left:10px;
+        position: relative;
+        button{
+            margin-top: 2vh ;
+            margin-right: 2vw;
+            }
+        }
+        .popupMessage{
+            position: absolute;
+            top:110%;     
+            display:flex;
+            flex-direction:column;   
+            p{
+                color: green;
+            }
+            .Backlink{
+                margin-top:-20px;
+                font-size: $typoL;
+            }
+        }
+    }
+   
+}
+

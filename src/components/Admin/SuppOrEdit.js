@@ -8,8 +8,20 @@ export default function SuppOrEdit(props) {
         <p> {props.name}</p>
       </span>
       <div>
-        <button onClick={props.handleClickSupp}>Supp</button>
-        <button onClick={props.handleClickEdit}>Edit</button>
+        <button className='BtnAction' onClick={props.handleClickSupp}>
+          <img
+            alt='logo del'
+            className='logoBtn'
+            src='/images/logo/trash.svg'
+          />
+        </button>
+        <button className='BtnAction' onClick={props.handleClickEdit}>
+          <img
+            alt='logo edit'
+            className='logoBtn'
+            src='/images/logo/edit.svg'
+          />
+        </button>
       </div>
     </div>
   )

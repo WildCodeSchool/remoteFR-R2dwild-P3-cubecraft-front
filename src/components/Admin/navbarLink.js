@@ -1,7 +1,7 @@
 export const navbar = [
   {
     id: '1',
-    linkname: 'Slider',
+    linkname: "Page d'accueil",
     route: '/admin/slider'
   },
   {
@@ -33,10 +33,5 @@ export const navbar = [
     id: '7',
     linkname: 'Photos',
     route: '/admin/photos'
-  },
-  {
-    id: '8',
-    linkname: 'Info site',
-    route: '/admin/info-site'
   }
 ]

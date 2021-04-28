@@ -1,9 +1,19 @@
 .admin_general_Add_Field{
-    width: 100%;
     margin: 3vh 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding-bottom: 3px;
-    border: 1px solid orange;
+    p{
+        padding: 0px;
+        margin : 0px;
+    }
+}
+.logoBtn{
+    width : 25px;
+}
+.BtnAction{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
 }

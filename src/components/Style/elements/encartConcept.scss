@@ -1,0 +1,54 @@
+.encart_concept {
+  max-width:$max-width-block;
+  width: 95%;
+  margin: 5vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include sm {
+    width: 75%;
+    flex-direction: column;
+  }  
+
+  div {
+    @include encart_intro;   
+    &.responsive {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    } 
+    ul {
+      display: flex;
+      
+      @include sm {
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      height: 100%;
+      border-radius: 35px;
+      padding: $padXXL;
+      background: linear-gradient(0deg, rgba(6,23,34,1) 0%, rgba(0,0,0,0) 100%);
+      li {
+        z-index: 2;
+        align-self: flex-end;
+        @include sm {
+          align-self: stretch;
+        }
+        p {
+          color: $colorThird;
+          margin-bottom:0;
+          width: 90%;
+          @include sm {
+            width: 100%;
+            margin-bottom:$spaceH_XXL;
+          }
+        }
+        &.Center{
+          justify-content: center;
+          display: flex;
+        }
+      }
+    
+    }
+  }
+}

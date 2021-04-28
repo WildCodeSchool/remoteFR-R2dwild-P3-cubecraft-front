@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function IntroEncart({ imageEncart, titleH3, link }) {
+export default function IntroEncart({ imageEncart, titleH3, link, target }) {
   return (
     <ul
       style={{
@@ -11,7 +11,7 @@ export default function IntroEncart({ imageEncart, titleH3, link }) {
         <h3>{titleH3}</h3>
       </li>
       <li>
-        <a href=''>{link}</a>
+        <a href={target}>{link}</a>
       </li>
     </ul>
   )

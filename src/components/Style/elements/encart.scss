@@ -14,8 +14,12 @@
   margin-bottom: $spaceH_XL ;
   width: 75%;
   box-shadow: 0px 4px 30px 3px rgba(8, 26, 42, 0.1);
+  
   // Responsive part
-  @include sm {margin:$spaceH_XXL auto ;}
+  @include sm {
+    margin:$spaceH_XXL auto ;
+  }
+
   h3 {
     color: $colorThird;
     position: relative;
@@ -25,5 +29,3 @@
     @include button;
   }
 }
-
-

@@ -8,3 +8,38 @@
 #admin h1{
     margin: 2vh 0;
 }
+.updateTitle{
+    margin: 0px 10px;
+    padding: 0px;
+    color: green;
+}
+.updateTitleWarning{
+    margin: 0px 10px;
+    padding: 0px;
+    color: red;
+}
+    .container-choice-img{
+        display:flex;
+        align-self:center;
+        justify-content: space-between;
+        flex-wrap:wrap;
+    }
+    .choicephoto-container{
+        position: relative;
+        width:250px;
+        margin: 10px 0;
+        img{
+            width: 250px;
+            object-fit:cover;
+        }
+    }
+    .choicephoto-container button{
+        box-shadow: none;
+        position: absolute;
+        bottom: 2px;
+        right:2px;
+        z-index:10;
+        &:hover{
+            animation:none;
+        }
+    }

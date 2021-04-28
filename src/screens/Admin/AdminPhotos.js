@@ -12,31 +12,59 @@ export default function AdminPhotos() {
   function AddPhoto() {
     history.push(`/admin/photos/add`)
   }
-  const deletePhoto = id => {
-    axios.delete(`http://localhost:4242/photos/${id}`, {}).then(res => {
-      setAffiched(!affiched)
-    })
+  const deletePhoto = (id, name) => {
+    axios
+      .delete(
+        `http://localhost:4242/photos/${id}/${name.replace('/images/', '')}`,
+        {}
+      )
+      .then(res => {
+        setAffiched(!affiched)
+      })
   }
   useEffect(() => {
-    const fetchData = async () => {
-      const resq = await axios.get('http://localhost:4242/photos')
-      setDatas(resq.data)
-    }
-    fetchData()
+    const token = localStorage.getItem('adminUser')
+    axios({
+      method: 'POST',
+      url: 'http://localhost:4242/signin/protected',
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(res => {
+      if (res.data.mess !== 'Authorized') {
+        history.push('/admin/login')
+      }
+      const fetchData = async () => {
+        const resq = await axios.get('http://localhost:4242/photos')
+        setDatas(resq.data)
+      }
+      fetchData()
+    })
   }, [affiched])
-console.log(datas)
+
   return (
     <>
       <section id='admin'>
-        <h1>Photo</h1>
+        <h1>Photos</h1>
         <div>
           <ButtonAdd name='Ajouter une photo' handleClickAdd={AddPhoto} />
         </div>
-        <div>
+        <div className='Container-Image-Storage'>
           {datas.map((data, index) => (
             <>
-              <img className="img-upload" style={{width: "100px"}}key={index} src={`${data.Name}`} />
-              <button onClick={() => deletePhoto(data.Id)}>suppr</button>
+              <div className='imageInStorage'>
+                <img className='img-upload' key={index} src={`${data.Name}`} />
+                <button
+                  className='BtnAction'
+                  onClick={() => deletePhoto(data.Id, data.Name)}
+                >
+                  <img
+                    alt='logo add'
+                    className='logoBtn'
+                    src='/images/logo/trash.svg'
+                  />
+                </button>
+              </div>
             </>
           ))}
         </div>

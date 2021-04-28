@@ -3,5 +3,16 @@
     flex-direction: column;
     width:70%;
     padding: 3rem;
-    border: 1px solid red;
+    background: white;
+    h1{
+        color: $colorPrimary;
+        letter-spacing: 1.5px;
+    }
+    h3{
+        margin: 2vh auto 1vh auto;
+    }
+    .form-group{
+        display: flex;
+        align-items: center;
+    }
 }

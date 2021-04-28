@@ -9,16 +9,18 @@ $typoXS: 0.8rem;
 
 // Colors
 $colorPrimary: #061722;// Dark blue, color texte and background 
-$colorSecondary: #38892C; // Green light, alternative color
+$colorSecondary: #3aa02a; // Green light, alternative color
 $colorThird:#fff;// Contrast color for menu link
 $colorBack: #c4c4c436;
 $colorDanger: red;
 
 // Colors alpha
-$colorAlphaP:#06172280;
+$colorAlphaP:#061722c4;
 $colorAlphaS:#051724be;
 
 
 // Breakpoint mediaqueries
-
 $breakpoint-tablet: 768px;
+
+// Card profile size 
+$widthCardPlayer : 350px;

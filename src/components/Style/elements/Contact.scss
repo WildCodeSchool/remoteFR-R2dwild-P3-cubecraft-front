@@ -1,0 +1,82 @@
+
+hr {
+  border: solid $colorSecondary 1px;
+}
+
+.Contact {
+  margin: 3rem auto 0;
+  max-width: 50%;
+  max-width: 350px;
+  border: 1px solid $colorSecondary;
+  border-radius: 5px;
+  background: $colorThird;
+  padding: 0 30px 10px;
+  box-shadow: 0px 4px 10px rgba(51, 51, 51, 0.637);
+  margin-bottom: 40px;
+}
+
+.title-form {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: $colorSecondary;
+  font-family: $typoPrimaire;
+  font-size: $typoXL;
+}
+
+input {padding: 11px 12px;
+  margin-bottom: 2px;
+  transition: background .2s ease-in;
+  background: #0617230f;
+  border: 0;
+}
+
+input:focus {
+  background: #06172338;
+}
+.form-btn {
+    background-color: $colorThird;
+    color: $colorSecondary;
+    border-radius: 10px;
+    padding: $spaceH_XL;
+    width: 100%;
+    font-family: $typoPrimaire;
+    border:1px solid $colorSecondary;
+    
+}
+textarea {
+  resize: none;
+  padding: 24px 0;
+  font-family: $typoPrimaire;
+  width: 90%;
+  border: 0;
+  padding: 11px 12px;
+  margin-bottom: 2px;
+  transition: background .2s ease-in;
+  background: #0617230f;
+  border: 0;
+  
+}
+
+textarea:focus {
+  background: #06172338;
+}
+
+.consent {
+  margin-top: 5px;
+  display: flex;
+}
+.p-consent {
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.p-valid {
+  color: red;
+  font-size: $typoS;
+  font-family: $typoPrimaire;
+}
+
+
+
+

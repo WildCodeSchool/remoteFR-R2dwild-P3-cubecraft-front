@@ -1,16 +1,26 @@
 import './App.scss'
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
-import { useState } from 'react'
+import {
+  Route,
+  Switch,
+  BrowserRouter as Router,
+  Redirect
+} from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 import About from './screens/Client/About'
 import AdminAboutUs from './screens/Admin/AdminAboutUs'
+import Connexion from './screens/Admin/Login'
 import AdminAboutUsAdd from './screens/Admin/AdminAboutUsAdd'
 import AdminAboutUsModified from './screens/Admin/AdminAboutUsModified'
 import AdminConcept from './screens/Admin/AdminConcept'
 import AdminConceptAdd from './screens/Admin/AdminConceptAdd'
 import AdminConceptModified from './screens/Admin/AdminConceptModified'
+import AdminEncart from './screens/Admin/AdminEncart'
+import AdminEncartAdd from './screens/Admin/AdminEncartAdd'
+import AdminEncartModified from './screens/Admin/AdminEncartModified'
 import AdminNews from './screens/Admin/AdminNews'
 import AdminNewsAdd from './screens/Admin/AdminNewsAdd'
+import AdminNewsModified from './screens/Admin/AdminNewsModified'
 import AdminPart from './screens/Admin/AdminPart'
 import AdminPartAdd from './screens/Admin/AdminPartAdd'
 import AdminPartModified from './screens/Admin/AdminPartModified'
@@ -34,6 +44,11 @@ import SideDrawer from './components/Client/SideDrawer'
 
 const App = () => {
   const [sideToggle, setSideToggle] = useState(false)
+  const [displayLog, setDisplayLog] = useState('')
+
+  useEffect(() => {
+    localStorage.adminUser ? setDisplayLog('block') : setDisplayLog('none')
+  })
 
   return (
     <Router>
@@ -45,7 +60,7 @@ const App = () => {
       >
         {/* Test adress if location contain Admin we get the Nav of admin else the Nav site */}
         {location.pathname.includes('admin') ? (
-          <NavBarAdmin />
+          <NavBarAdmin displayLog={displayLog} />
         ) : (
           <>
             <Navbar
@@ -71,9 +86,17 @@ const App = () => {
             path='/admin/about/profile/:id'
             component={AdminAboutUsModified}
           />
+          <Route exact path='/admin'>
+            <Redirect to='/admin/login' />
+          </Route>
+          <Route path='/admin/login' component={Connexion} />
           <Route path='/admin/about/profile' component={AdminAboutUsAdd} />
           <Route path='/admin/about' component={AdminAboutUs} />
           <Route path='/admin/actualites/add' component={AdminNewsAdd} />
+          <Route
+            path='/admin/actualites/modif/:id'
+            component={AdminNewsModified}
+          />
           <Route path='/admin/actualites' component={AdminNews} />
           <Route
             path='/admin/concept/modified/:id'
@@ -84,11 +107,11 @@ const App = () => {
           <Route path='/admin/professionnel/add' component={AdminProAdd} />
           <Route path='/admin/slider' component={AdminSlider} />
           <Route
-            path='/admin/concept/modified/:id'
-            component={AdminConceptModified}
+            path='/admin/encart/modified/:id'
+            component={AdminEncartModified}
           />
-          <Route path='/admin/concept/add' component={AdminConceptAdd} />
-          <Route path='/admin/concept' component={AdminConcept} />
+          <Route path='/admin/encart/add' component={AdminEncartAdd} />
+          <Route path='/admin/encart' component={AdminEncart} />
           <Route
             path='/admin/particulier/modif/:id'
             component={AdminPartModified}
